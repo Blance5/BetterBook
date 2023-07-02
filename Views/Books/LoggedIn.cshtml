@@ -1,0 +1,174 @@
+﻿@model FinalBookProj.Models.SearchViewModel
+
+@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/bootstrap")
+@Styles.Render("~/Content/css")
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
+
+<main>
+    @if (!string.IsNullOrEmpty(ViewBag.Error))
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="	https://images1.penguinrandomhouse.com/cover/9780593593806" class="d-block w-100" alt="Spare">
+                        <h5 class="card-title">Spare</h5>
+                        <p class="card-text">Author: Prince Harry</p>
+                        <p class="card-text">Rating: 5</p>
+                        <p class="card-body" style="height: 120px">For Harry, this is that story at last. Before losing his mother, twelve-year-old Prince Harry was known as the carefree one, the happy-go-lucky Spare to the more serious Heir. Grief changed everything...</p>
+                        <div class="container d-flex justify-content-center">
+                            @if (Model.userList.Contains("wvqXEAAAQBAJ"))
+                            {
+                                <button type="button" class="add-book-button btn btn-lg" style="border-color: black; background-color: darkgrey" id="wvqXEAAAQBAJ" value="" disabled>Add Book</button>
+                            }
+                            else
+                            {
+                                <button type="button" class="add-book-button btn btn-lg" style="border-color: black" id="wvqXEAAAQBAJ" value="">Add Book</button>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://m.media-amazon.com/images/I/71Ovi8nl0gL._AC_UF1000,1000_QL80_.jpg" class="d-block w-100" alt="...">
+                        <h5 class="card-title">Hell Bent</h5>
+                        <p class="card-text">Author: Leigh Bardugo</p>
+                        <p class="card-text">Rating: 4.5</p>
+                        <p class="card-body" style="height: 120px">Galaxy “Alex” Stern is determined to break Darlington out of purgatory—even if it costs her a future at Lethe and at Yale. Forbidden from attempting a rescue, Alex and Dawes can’t call on the Ninth House for help, so they assemble a team of dubious allies to save the gentleman of Lethe...</p>
+                        <div class="container d-flex justify-content-center">
+                            @if (Model.userList.Contains("ACplEAAAQBAJ"))
+                            {
+                                <button type="button" class="add-book-button btn btn-lg" style="border-color: black; background-color: darkgrey" id="ACplEAAAQBAJ" value="" disabled>Add Book</button>
+                            }
+                            else
+                            {
+                                <button type="button" class="add-book-button btn btn-lg" style="border-color: black" id="ACplEAAAQBAJ" value="">Add Book</button>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://th.bing.com/th/id/R.b035197e545f9dec9d1007734c0e15e0?rik=ywkGOM4d%2bV%2fjEA&riu=http%3a%2f%2fcarolsnotebook.com%2fwp-content%2fuploads%2f2023%2f03%2fThe-Mimicking-of-Known-Successes.png&ehk=aUk7e6T7%2bjmtAMmc%2fEr4tfenvo1QHI9p7vBqAAzrK6g%3d&risl=&pid=ImgRaw&r=0" class="d-block w-100" style="height: 630px; width: 414px" alt="...">
+                        <h5 class="card-title">The Mimicking of Known Successes</h5>
+                        <p class="card-text">Author: Malka Older</p>
+                        <p class="card-text">Rating: 4</p>
+                        <p class="card-body" style="height: 120px">On a remote, gas-wreathed outpost of a human colony on Jupiter, a man goes missing. The enigmatic Investigator Mossa follows his trail to Valdegeld, home to the colony’s erudite university—and Mossa’s former girlfriend, a scholar of Earth’s pre-collapse ecosystems...</p>
+                        <div class="container d-flex justify-content-center">
+                            @if (Model.userList.Contains("MG9pEAAAQBAJ"))
+                            {
+                                <button type="button" class="add-book-button btn btn-lg" style="border-color: black; background-color: darkgrey" id="MG9pEAAAQBAJ" value="" disabled>Add Book</button>
+                            }
+                            else
+                            {
+                                <button type="button" class="add-book-button btn btn-lg" style="border-color: black" id="MG9pEAAAQBAJ" value="">Add Book</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1660145160i/61718053.jpg" style="height: 630px; width: 414px" class="d-block w-100" alt="...">
+                        <h5 class="card-title">Happy Place</h5>
+                        <p class="card-text">Author: Emily Henry</p>
+                        <p class="card-text">Rating: 4.5</p>
+                        <p class="card-body" style="height: 168px">Do you ever wonder why we continue to have the same problems, deal with the same issues, and experience the same hurts over and over again? We may even know why we hurt, where it all originated, but we can't seem to make the hurting stop. What do we do when we don't want to go for counseling, but we just don't know how? I'd been asking these questions for years...</p>
+                        <div class="container d-flex justify-content-center">
+                            @if (Model.userList.Contains("LthUzwEACAAJ"))
+                            {
+                                <button type="button" class="add-book-button btn btn-lg" style="border-color: black; background-color: darkgrey" id="LthUzwEACAAJ" value="" disabled>Add Book</button>
+                            }
+                            else
+                            {
+                                <button type="button" class="add-book-button btn btn-lg" style="border-color: black" id="LthUzwEACAAJ" value="">Add Book</button>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1652631076i/60784636.jpg" style="height: 630px; width: 414px" class="d-block w-100" alt="...">
+                        <h5 class="card-title">All the Dangerous Things</h5>
+                        <p class="card-text">Author: Stacy Willingham</p>
+                        <p class="card-text">Rating: 4.5</p>
+                        <p class="card-body" style="height: 168px">Stacy Willingham delivers a totally gripping thriller about a desperate mother with a troubled past in All the Dangerous Things . One year ago, Isabelle Drake's life changed forever: her toddler son, Mason, was taken out of his crib in the middle of the night while she and her husband were asleep in the next room...</p>
+                        <div class="container d-flex justify-content-center">
+                            @if (Model.userList.Contains("o5lJzwEACAAJ"))
+                            {
+                                <button type="button" class="add-book-button btn btn-lg" style="border-color: black; background-color: darkgrey" id="o5lJzwEACAAJ" value="" disabled>Add Book</button>
+                            }
+                            else
+                            {
+                                <button type="button" class="add-book-button btn btn-lg" style="border-color: black" id="o5lJzwEACAAJ" value="">Add Book</button>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="http://books.google.com/books/publisher/content?id=Ict_EAAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE73yDeNUV-4YjUYpKX3a9RDwpLV8ZckdQx-84JC-w1Um5coIEb0eiEXO38CkTjVy48f_Lraj7L5VqfRy0O8hzmhLskwOLOnIjUGqq-JmaV-WCViDb9E&source=gbs_api" style="height: 630px; width: 414px" class="d-block w-100" alt="...">
+                        <h5 class="card-title">Yours Truly</h5>
+                        <p class="card-text">Author: Abby Jimenez</p>
+                        <p class="card-text">Rating: 5</p>
+                        <p class="card-body" style="height: 168px">Briana Ortiz's life is seriously flatlining. Her divorce is just about finalized, her brother's running out of time to find a kidney donor, and that promotion she wants? Oh, that's probably going to the new man-doctor who's already registering eighty-friggin'-seven on Briana's "pain in my ass" scale. But just when all systems are set to hate, Dr. Jacob Maddox completely flips the game...</p>
+                        <div class="container d-flex justify-content-center">
+                            @if (Model.userList.Contains("2URTzwEACAAJ"))
+                            {
+                                <button type="button" class="add-book-button btn btn-lg" style="border-color: black; background-color: darkgrey" id="2URTzwEACAAJ" value="" disabled>Add Book</button>
+                            }
+                            else
+                            {
+                                <button type="button" class="add-book-button btn btn-lg" style="border-color: black" id="2URTzwEACAAJ" value="">Add Book</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" style="height: 630px" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" style="height: 630px" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <script>
+    $(document).ready(function () {
+        $(".search-bar").removeClass("hidden-search");
+        $(".add-book-button").click(function () {
+            console.log("WORKED")
+            var bookId = $(this).attr("id");
+            var button = $(this);
+            $.ajax({
+                url: "/Books/addBook",
+                type: "POST",
+                data: { bID: bookId, userList: @Html.Raw(Json.Encode(Model.userList))},
+                success: function (response) {
+                    toastr.success("Book added successfully");
+                    button.prop("disabled", true);
+                    button.addClass("disabled");
+                    button.addClass("dark-grey")
+                },
+                error: function (xhr, status, error) {
+                    toastr.error("Unsuccessful attemp to add book")
+                }
+            });
+        });
+    });
+    </script>
+
+    <style>
+        .dark-grey {
+            background-color: darkgrey !important;
+        }
+    </style>
+</main>

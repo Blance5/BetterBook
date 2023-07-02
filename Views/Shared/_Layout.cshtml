@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Book Saver</title>
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <div class="img-container" style="height: 14vh; overflow: hidden; position: relative;">
+        <img src="https://png.pngtree.com/back_origin_pic/03/64/01/bd57f29a3d7b41d312ed285b295f87b7.jpg" class="card-img" alt="Boook Banner" style="position: absolute;">
+    </div>
+
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            <a href="@Url.Action("Index", "Home")" class="text-white">
+                <i class="bi bi-book" style="color: white; font-size: 2rem; margin-right: 5px"></i>
+            </a>
+            @Html.ActionLink("BetterBook", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex">
+                <div class="col-7 d-flex justify-content-start">
+                    @using (Html.BeginForm("Search", "Books", FormMethod.Get))
+                    {
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <button class="btn btn-close-white rounded-pill" type="submit">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                            <input type="text" class="form-control rounded-pill border-0 bg-transparent text-white" name="query" placeholder="Search...">
+                        </div>
+                    }
+                </div>
+                <a href="@Url.Action("displayList", "Books")" class="btn btn-close-white" style="margin-right: 25px; font-size: 1.5rem;">
+                    <i class="bi bi-cart-fill"></i> Saved Books
+                </a>
+
+
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Ben Lance</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

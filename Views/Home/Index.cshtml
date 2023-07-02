@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@Scripts.Render("~/bundles/bootstrap")
+@Styles.Render("~/Content/css")
+<main>
+    @if (!string.IsNullOrEmpty(ViewBag.Error))
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
+    <div class="text-center">
+        <h1 class="display-4">Welcome to BetterBook</h1>
+        <p class="lead">Always here to help you find books youll love</p>
+        <p>Please log in to use the app</p>
+    </div>
+</main>

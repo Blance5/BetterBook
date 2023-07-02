@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@Scripts.Render("~/bundles/bootstrap")
+@Styles.Render("~/Content/css")
+
+<head>
+    <title>Error 404 - Uh Oh</title>
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        a.btn {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>Error 404</h1>
+        <p>Something appears to have gone wrong - @ViewBag.Error</p>
+        <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Go to Home</a>
+    </div>
+</body>
